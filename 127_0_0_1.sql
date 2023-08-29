@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 22-Ago-2023 às 01:27
+-- Tempo de geração: 29-Ago-2023 às 00:54
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -53,23 +53,16 @@ INSERT INTO `cadastrar` (`nome`, `gmail`, `senha`, `id_perfil`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `perfil`
+-- Estrutura da tabela `carrinho`
 --
 
-DROP TABLE IF EXISTS `perfil`;
-CREATE TABLE IF NOT EXISTS `perfil` (
-  `id_perfil` int NOT NULL AUTO_INCREMENT,
-  `pefil` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_perfil`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Extraindo dados da tabela `perfil`
---
-
-INSERT INTO `perfil` (`id_perfil`, `pefil`) VALUES
-(1, 'cliente'),
-(2, 'vendedor');
+DROP TABLE IF EXISTS `carrinho`;
+CREATE TABLE IF NOT EXISTS `carrinho` (
+  `prod_select` int NOT NULL AUTO_INCREMENT,
+  `produto` int NOT NULL,
+  PRIMARY KEY (`prod_select`),
+  KEY `FK_produto` (`produto`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
