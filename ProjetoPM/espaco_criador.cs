@@ -18,7 +18,6 @@ namespace ProjetoPM
         //instancio o objeto produto
         ProdutoModelo pmodelo = new ProdutoModelo();
         ProdutoController pController = new ProdutoController();
-        int codigoProduto;//identificar qual codigo
         conexao com = new conexao();//chama a classe conexão
         public espaco_criador()
         {
