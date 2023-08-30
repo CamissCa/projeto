@@ -156,6 +156,7 @@ C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\bin\Debug\System.Threading.Tas
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.csproj.AssemblyReference.cache
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.csproj.SuggestedBindingRedirects.cache
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.cadastrar.resources
+C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.Carrinho.resources
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.espaco_criador.resources
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.Login.resources
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.Menu.resources
@@ -165,4 +166,3 @@ C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.csproj.Cor
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.csproj.CopyComplete
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.exe
 C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.pdb
-C:\Users\aluno\Documents\GitHub\projeto\ProjetoPM\obj\Debug\ProjetoPM.Carrinho.resources

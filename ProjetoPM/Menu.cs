@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Controller;
 using Microsoft.Win32;
 using Modelo;
+using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
 
 namespace ProjetoPM
@@ -42,16 +43,22 @@ namespace ProjetoPM
                 produto.Height = 250;
                 produto.Width = 250;
 
-                Label idproduto = new Label(); //uma nova label id_produto
-                idproduto.Name = "idproduto"; //nome da label
-                idproduto.Text = dt.Rows[registros][0].ToString();//mostra o registro
+                //area do id
+                Label idproduto = new Label();
+                idproduto.Text = dt.Rows[registros][0].ToString();
+                idproduto.Location = new Point(20, 55);
 
-               /* //crio a area de foto
-                PictureBox foto = new PictureBox();//crio a area de foto
-                foto.Location = new Point(20, 0);
-                foto.SizeMode = PictureBoxSizeMode.StretchImage;
-                foto.Name = "foto";
-                foto.Image = Image.FromFile(dt.Rows[registros][4].ToString());*/
+                //area do nome
+                Label nomeP = new Label();
+                nomeP.Name = "descricao";
+                nomeP.Text = dt.Rows[registros][1].ToString();
+                nomeP.Location = new Point(20, 55);
+
+                //area da descricao
+                Label descproduto = new Label();
+                descproduto.Name = "descricao";
+                descproduto.Text = dt.Rows[registros][2].ToString();
+                descproduto.Location = new Point(20, 55);
 
                 //area do preco
                 Label preco = new Label();
@@ -60,21 +67,26 @@ namespace ProjetoPM
                 preco.Location = new Point(20, 85);
                 CheckBox cb = new CheckBox();
                 cb.Name = "ver_comp";
-                //area da descricao
-                Label descproduto = new Label();
-                descproduto.Name = "descricao";
-                descproduto.Text = dt.Rows[registros][2].ToString();
-                descproduto.Location = new Point(20, 55);
+
+                /*//crio a area de foto
+                 PictureBox foto = new PictureBox();//crio a area de foto
+                 foto.Location = new Point(20, 0);
+                 foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                 foto.Name = "foto";
+                foto.Size = new Size(220, 220);
+                 foto.Image = Image.FromFile(dt.Rows[registros][4].ToString());*/
+
 
                 //craindo e modificando botão
                 Button registrar = new Button();
                 registrar.Name = "Selecionar";
 
-           
-               // Image.FromFile("C:\\Users\\aluno\\Downloads\\pare.png");
+
+                // Image.FromFile("C:\\Users\\aluno\\Downloads\\pare.png");
                 registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text));
                 registrar.Location = new Point(20, 150);
 
+                produto.Controls.Add(nomeP);
                 produto.Controls.Add(descproduto);
                 produto.Controls.Add(preco);
                 //produto.Controls.Add(foto);
@@ -83,25 +95,34 @@ namespace ProjetoPM
                 produto.Controls.Add(registrar);
 
                 //painel criado da caixa de ferramenta
-                //adiciono cada produto da consulta ao painel 
+                //adiciono cada produto da consulta ao painel
                 flowLayoutPanel1.Controls.Add(produto);
                 //somando 100 a y
                 y += 100;
                 x = 0;
             }
-            }
+        }
 
         private void SelecionarClick(object sender, EventArgs e, string Id)
         {
-             var result = MessageBox.Show("Adicionar produto ao carrinho?","", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Adicionar produto ao carrinho?", "", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Produto adicionado ao carrinho!");
+                string sql = "insert into carrinho(produto)" + "values(" + Convert.ToInt32(Id) + ")";
+                MySqlConnection sqlCon = cnx.getconexao();
+                sqlCon.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, sqlCon);
+                cmd.ExecuteNonQuery();
+                sqlCon.Close();
 
+                MessageBox.Show("foi?");
+
+                Carrinho go_carrinho = new Carrinho();
+                go_carrinho.ShowDialog();
             }
 
-            
+
         }
         private void preçosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -117,8 +138,13 @@ namespace ProjetoPM
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
+        private void carrinhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Carrinho go_carrinho = new Carrinho();
+            go_carrinho.ShowDialog();
+        }
     }
 }
