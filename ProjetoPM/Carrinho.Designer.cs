@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.FinCompra = new System.Windows.Forms.Button();
-            this.pcarrinho = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -43,19 +42,13 @@
             this.FinCompra.Text = "Finalizar Compra";
             this.FinCompra.UseVisualStyleBackColor = true;
             // 
-            // pcarrinho
-            // 
-            this.pcarrinho.Location = new System.Drawing.Point(25, 41);
-            this.pcarrinho.Name = "pcarrinho";
-            this.pcarrinho.Size = new System.Drawing.Size(560, 121);
-            this.pcarrinho.TabIndex = 1;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(92, 208);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(950, 403);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -63,9 +56,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(974, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pcarrinho);
             this.Controls.Add(this.FinCompra);
             this.Name = "Carrinho";
             this.Text = "Carrinho";
@@ -78,7 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Button FinCompra;
-        private System.Windows.Forms.Panel pcarrinho;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
