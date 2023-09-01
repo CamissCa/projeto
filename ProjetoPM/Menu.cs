@@ -41,7 +41,7 @@ namespace ProjetoPM
                 //borda do produto
                 produto.BorderStyle = BorderStyle.FixedSingle;
                 produto.Height = 250;
-                produto.Width = 250;
+                produto.Width = 566;
 
                 //area do id
                 Label idproduto = new Label();
@@ -50,31 +50,31 @@ namespace ProjetoPM
 
                 //area do nome
                 Label nomeP = new Label();
-                nomeP.Name = "descricao";
+                nomeP.Name = "nome";
                 nomeP.Text = dt.Rows[registros][1].ToString();
-                nomeP.Location = new Point(20, 55);
+                nomeP.Location = new Point(393, 5);
 
                 //area da descricao
                 Label descproduto = new Label();
                 descproduto.Name = "descricao";
                 descproduto.Text = dt.Rows[registros][2].ToString();
-                descproduto.Location = new Point(20, 55);
+                descproduto.Location = new Point(393, 40);
 
                 //area do preco
                 Label preco = new Label();
                 preco.Name = "preco";
                 preco.Text = dt.Rows[registros][3].ToString();
-                preco.Location = new Point(20, 85);
+                preco.Location = new Point(393, 220);
                 CheckBox cb = new CheckBox();
                 cb.Name = "ver_comp";
-
-                /*//crio a area de foto
+                
+                //crio a area de foto
                  PictureBox foto = new PictureBox();//crio a area de foto
                  foto.Location = new Point(20, 0);
                  foto.SizeMode = PictureBoxSizeMode.StretchImage;
                  foto.Name = "foto";
-                foto.Size = new Size(220, 220);
-                 foto.Image = Image.FromFile(dt.Rows[registros][4].ToString());*/
+                foto.Size = new Size(230, 230);
+                 foto.Image = Image.FromFile(dt.Rows[registros][4].ToString());
 
 
                 //craindo e modificando botão
@@ -89,7 +89,7 @@ namespace ProjetoPM
                 produto.Controls.Add(nomeP);
                 produto.Controls.Add(descproduto);
                 produto.Controls.Add(preco);
-                //produto.Controls.Add(foto);
+                produto.Controls.Add(foto);
                 produto.Controls.Add(cb);
                 produto.Controls.Add(idproduto);
                 produto.Controls.Add(registrar);

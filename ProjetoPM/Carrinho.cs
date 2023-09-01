@@ -63,12 +63,15 @@ namespace ProjetoPM
                 nomeP.Text = dt.Rows[registros][1].ToString();
                 nomeP.Location = new Point(20, 55);
 
-                /* //crio a area de foto
-                 PictureBox foto = new PictureBox();//crio a area de foto
-                 foto.Location = new Point(20, 0);
-                 foto.SizeMode = PictureBoxSizeMode.StretchImage;
-                 foto.Name = "foto";
-                 foto.Image = Image.FromFile(dt.Rows[registros][4].ToString());*/
+                //crio a area de foto
+                DataGridViewImageColumn col = new DataGridViewImageColumn();
+                col.Name = "Imagem do Produto";
+                dataGridView1.Columns["Imagem do Produto"].HeaderText = "col";
+                dataGridView1.Columns["Imagem do Produto"].Width = 64;
+                col.Image = Image.FromFile(dt.Rows[registros][4].ToString());
+                col.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                dataGridView1.Columns.Add(col);
+                
 
                 //area do preco
                 Label preco = new Label();
@@ -87,7 +90,6 @@ namespace ProjetoPM
                 produto.Controls.Add(nomeP);
                 produto.Controls.Add(descproduto);
                 produto.Controls.Add(preco);
-                //produto.Controls.Add(foto);
                 produto.Controls.Add(cb);
                 produto.Controls.Add(idproduto);
                 y = 0;
@@ -96,7 +98,7 @@ namespace ProjetoPM
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        { 
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
