@@ -68,21 +68,18 @@ namespace ProjetoPM
                 CheckBox cb = new CheckBox();
                 cb.Name = "ver_comp";
                 
-                //crio a area de foto
+               //crio a area de foto
                  PictureBox foto = new PictureBox();//crio a area de foto
                  foto.Location = new Point(20, 0);
                  foto.SizeMode = PictureBoxSizeMode.StretchImage;
                  foto.Name = "foto";
-                foto.Size = new Size(230, 230);
+                 foto.Size = new Size(230, 230);
                  foto.Image = Image.FromFile(dt.Rows[registros][4].ToString());
 
 
                 //craindo e modificando botão
                 Button registrar = new Button();
                 registrar.Name = "Selecionar";
-
-
-                // Image.FromFile("C:\\Users\\aluno\\Downloads\\pare.png");
                 registrar.Click += new EventHandler((sender1, e1) => SelecionarClick(sender1, e1, idproduto.Text));
                 registrar.Location = new Point(20, 150);
 

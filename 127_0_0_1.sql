@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 01-Set-2023 às 01:04
+-- Tempo de geração: 06-Set-2023 às 00:35
 -- Versão do servidor: 8.0.31
 -- versão do PHP: 8.0.26
 
@@ -64,15 +64,6 @@ CREATE TABLE IF NOT EXISTS `carrinho` (
   KEY `FK_produto` (`produto`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Extraindo dados da tabela `carrinho`
---
-
-INSERT INTO `carrinho` (`prod_select`, `produto`) VALUES
-(1, 2),
-(2, 4),
-(3, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -87,15 +78,15 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `preco` varchar(6) NOT NULL,
   `foto` varchar(400) NOT NULL,
   PRIMARY KEY (`id_produto`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`id_produto`, `nome_prod`, `descricao`, `preco`, `foto`) VALUES
-(5, 'sapo', 'sapo armado e treinado', '52,90', 'C:\\Users\\aluno\\Downloads\\unnamed.png'),
-(4, 'natal dos robos', 'festa temática na floresta', '100,00', 'C:\\Users\\aluno\\Downloads\\unnamed (1).png');
+(7, 'natal crianca', 'robos', '105,09', 'C:\\\\Users\\\\aluno\\\\Downloads\\\\image.png'),
+(6, 'natal dos robos', 'floresta encantada', '560,80', 'C:\\\\Users\\\\aluno\\\\Downloads\\\\image.png');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

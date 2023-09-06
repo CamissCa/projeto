@@ -30,12 +30,13 @@
         {
             this.FinCompra = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // FinCompra
             // 
-            this.FinCompra.Location = new System.Drawing.Point(798, 415);
+            this.FinCompra.Location = new System.Drawing.Point(1186, 718);
             this.FinCompra.Name = "FinCompra";
             this.FinCompra.Size = new System.Drawing.Size(164, 23);
             this.FinCompra.TabIndex = 0;
@@ -52,16 +53,25 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 6);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1338, 706);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
             // Carrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(974, 450);
+            this.ClientSize = new System.Drawing.Size(1376, 753);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.FinCompra);
             this.Name = "Carrinho";
             this.Text = "Carrinho";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Carrinho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -72,5 +82,6 @@
 
         private System.Windows.Forms.Button FinCompra;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

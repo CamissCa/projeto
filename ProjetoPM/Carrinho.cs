@@ -31,17 +31,6 @@ namespace ProjetoPM
                 "left outer join carrinho as c on c.produto = p.id_produto;"); //seleciona a tabela produto e popula os dados.
             
             int registros;//ler a quantidade de dados
-
-             try
-            {
-                dataGridView1.DataSource = dt;
-            }
-            catch
-            {
-                MessageBox.Show("chora");
-            }
-            
-
             int x = 0, y = 0;//define a posição da tela
             for (registros = 0; registros < dt.Rows.Count; registros++)
             {
@@ -51,47 +40,46 @@ namespace ProjetoPM
                 //borda do produto
                 produto.BorderStyle = BorderStyle.FixedSingle;
                 produto.Height = 250;
-                produto.Width = 250;
+                produto.Width = 400;
 
+                //area do id
                 Label idproduto = new Label(); //uma nova label id_produto
                 idproduto.Name = "idproduto"; //nome da label
                 idproduto.Text = dt.Rows[registros][0].ToString();//mostra o registro
+                idproduto.Location = new Point(0, 1);
+                produto.Controls.Add(idproduto);
 
                 //area do nome
                 Label nomeP = new Label();
                 nomeP.Name = "descricao";
                 nomeP.Text = dt.Rows[registros][1].ToString();
-                nomeP.Location = new Point(20, 55);
-
-                //crio a area de foto
-                DataGridViewImageColumn col = new DataGridViewImageColumn();
-                col.Name = "Imagem do Produto";
-                dataGridView1.Columns["Imagem do Produto"].HeaderText = "col";
-                dataGridView1.Columns["Imagem do Produto"].Width = 64;
-                col.Image = Image.FromFile(dt.Rows[registros][4].ToString());
-                col.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                dataGridView1.Columns.Add(col);
-                
-
-                //area do preco
-                Label preco = new Label();
-                preco.Name = "preco";
-                preco.Text = dt.Rows[registros][3].ToString();
-                preco.Location = new Point(20, 85);
-                CheckBox cb = new CheckBox();
-                cb.Name = "ver_comp";
+                nomeP.Location = new Point(293, 5);
+                produto.Controls.Add(nomeP);
 
                 //area da descricao
                 Label descproduto = new Label();
                 descproduto.Name = "descricao";
                 descproduto.Text = dt.Rows[registros][2].ToString();
-                descproduto.Location = new Point(20, 55);
-
-                produto.Controls.Add(nomeP);
+                descproduto.Location = new Point(293, 40);
                 produto.Controls.Add(descproduto);
+
+                //area do preco
+                Label preco = new Label();
+                preco.Name = "preco";
+                preco.Text = dt.Rows[registros][3].ToString();
+                preco.Location = new Point(293, 40);
                 produto.Controls.Add(preco);
-                produto.Controls.Add(cb);
-                produto.Controls.Add(idproduto);
+
+                //crio a area de foto
+                 PictureBox foto = new PictureBox();//crio a area de foto
+                 foto.Location = new Point(20, 0);
+                 foto.SizeMode = PictureBoxSizeMode.StretchImage;
+                 foto.Name = "foto";
+                 foto.Size = new Size(230, 230);
+                 foto.Image = Image.FromFile(dt.Rows[registros][4].ToString());
+                 produto.Controls.Add(foto);
+
+                flowLayoutPanel1.Controls.Add(produto);
                 y = 0;
                 x += 100;
             }
@@ -101,9 +89,5 @@ namespace ProjetoPM
         { 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
